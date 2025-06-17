@@ -1,0 +1,201 @@
+:root {
+    --primarna-boja: #e61e25;
+    --druga-boja: #302e2e;
+    --pozadina-boja: #fff8f0;
+    --naglasak-boja: rgb(255, 215, 0);
+    --tekst-boja: #302e2e;
+    --staklo: rgba(255, 255, 255, 0.826);
+    --rub-stakla: rgba(255, 255, 255, 0.673);
+    --sjena: rgba(0, 0, 0, 0.151);
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--pozadina-boja) url('pozadina.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--tekst-boja);
+    min-height: 100vh;
+    text-align: center;
+    margin: 0;
+    position: relative;
+}
+
+.pozadina {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: inherit;
+    z-index: -1;
+}
+
+.stakleni-kontejner {
+    background: var(--staklo);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--rub-stakla);
+    border-radius: 24px;
+    box-shadow: 0 10px 32px var(--sjena);
+    margin: 3rem auto 2rem auto;
+    padding: 2rem 1rem;
+    max-width: 700px;
+    width: 90%;
+}
+
+.tekući-naslov {
+    font-family: 'MojFont', Arial, sans-serif;
+    font-size: 4.0rem;
+    background: linear-gradient(90deg, var(--primarna-boja), var(--naglasak-boja), var(--druga-boja));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: tekućiTekst 6s linear infinite;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.tekući-naslov2 {
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, var(--primarna-boja), var(--naglasak-boja), var(--druga-boja));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: tekućiTekst 6s linear infinite;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+@keyframes tekućiTekst {
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%;}
+    100% { background-position: 0% 50%;}
+}
+
+.podnaslov {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: var(--druga-boja);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navigacija {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.navigacijski-link {
+    position: relative;
+    color: var(--primarna-boja);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    padding: 0.7rem 1.7rem;
+    border-radius: 30px;
+    background: transparent;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    overflow: hidden;
+}
+
+.navigacijski-link::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: radial-gradient(circle, var(--naglasak-boja) 0%, transparent 80%);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.navigacijski-link:hover {
+    color: var(--druga-boja);
+    background: var(--naglasak-boja);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 24px var(--sjena);
+}
+
+.navigacijski-link:hover::before {
+    width: 180px;
+    height: 180px;
+    opacity: 1;
+}
+
+.središnji-sadržaj {
+    margin: 2rem auto;
+    max-width: 980px;
+    background: var(--staklo);
+    border-radius: 20px;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 16px var(--sjena);
+}
+
+.pozdravni-tekst {
+    font-size: 1.3rem;
+    color: var(--druga-boja);
+    margin: 0;
+    line-height: 1.7;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.video-sekcija {
+    margin: 2.5rem auto;
+    max-width: 700px;
+    background: var(--staklo);
+    border-radius: 18px;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 16px var(--sjena);
+}
+
+.video-naslov {
+    font-size: 1.5rem;
+    color: var(--primarna-boja);
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.video-kontejner {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px var(--sjena);
+}
+
+.video-kontejner video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+}
+
+footer {
+    background: var(--staklo);
+    border-radius: 0 0 16px 16px;
+    color: var(--druga-boja);
+    font-size: 1.1rem;
+    box-shadow: 0 -2px 8px var(--sjena);
+    font-family: 'Poppins', Arial, sans-serif;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+@media (max-width: 800px) {
+    .stakleni-kontejner, .središnji-sadržaj, .video-sekcija {
+        padding: 1.2rem 0.5rem;
+        max-width: 96vw;
+    }
+    .tekući-naslov { font-size: 2.1rem; }
+    .podnaslov { font-size: 1.1rem; }
+    .video-naslov { font-size: 1.2rem; }
+}
